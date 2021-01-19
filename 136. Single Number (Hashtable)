@@ -1,0 +1,16 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        HashMap<Integer, Integer> digitMap = new HashMap<Integer, Integer>();
+        
+        for(int i: nums){
+            digitMap.put(i, digitMap.getOrDefault(i,0) + 1);
+        }
+        
+        for(int i: nums){
+            if(digitMap.get(i) == 1){
+                return i;
+            }
+        }
+        return 0;
+    }
+}

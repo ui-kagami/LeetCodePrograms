@@ -1,0 +1,24 @@
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List<String> result = new ArrayList<String>();
+        
+        for(int i = 1; i <= n; i++){
+            StringBuilder sb = new StringBuilder();
+            boolean div3 = (i % 3 == 0);
+            boolean div5 = (i % 5 == 0);
+            
+            if(div3){
+                sb.append("Fizz");
+            }
+            if(div5){
+                sb.append("Buzz");
+            }
+            if(!div3 && !div5){
+                sb.append(Integer.toString(i));
+            }
+            result.add(sb.toString());
+        }
+        
+        return result;
+    }
+}

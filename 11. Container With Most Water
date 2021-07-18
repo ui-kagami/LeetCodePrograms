@@ -1,0 +1,30 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int res = 0;
+        int p1 = 0;
+        int p2 = height.length -1;
+        int hei;
+        int area;
+          
+        while(p1 != p2){
+            if( height[p1] < height[p2]){
+                hei = height[p1];
+            } else {
+                hei = height[p2];
+            }
+            
+            area =  hei * (p2 - p1);
+            
+            if( res < area) {
+                res = area;
+            }
+            if(height[p1] < height[p2]){
+                p1++;
+            } else {
+                p2--;
+            }
+        }
+        
+        return res;
+    }
+}
